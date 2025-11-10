@@ -5,12 +5,12 @@ import { Scene } from '../core/Scene';
  * AR Engine for rendering AR experiences
  */
 export class AREngine {
-  private config: EngineConfig;
+  private readonly _config: EngineConfig;
   private scene: Scene | null = null;
   private isInitialized = false;
 
   constructor(config: EngineConfig = {}) {
-    this.config = {
+    this._config = {
       antialias: config.antialias ?? true,
       powerPreference: config.powerPreference ?? 'high-performance',
     };

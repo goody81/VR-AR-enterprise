@@ -35,7 +35,7 @@ export interface SceneConfig {
 }
 
 export interface EngineConfig {
-  canvas?: HTMLCanvasElement;
+  canvas?: unknown; // HTMLCanvasElement in browser environment
   antialias?: boolean;
   powerPreference?: 'high-performance' | 'low-power' | 'default';
 }

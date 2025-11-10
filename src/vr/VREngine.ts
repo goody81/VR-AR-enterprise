@@ -5,12 +5,12 @@ import { Scene } from '../core/Scene';
  * VR Engine for rendering VR experiences
  */
 export class VREngine {
-  private config: EngineConfig;
+  private readonly _config: EngineConfig;
   private scene: Scene | null = null;
   private isInitialized = false;
 
   constructor(config: EngineConfig = {}) {
-    this.config = {
+    this._config = {
       antialias: config.antialias ?? true,
       powerPreference: config.powerPreference ?? 'high-performance',
     };
