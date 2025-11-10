@@ -1,0 +1,73 @@
+# Dependencies
+node_modules/
+vendor/
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build outputs
+*.log
+*.out
+*.o
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+*.app
+.build/
+out/
+bin/
+obj/
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+credentials/
+
+# Testing
+coverage/
+.coverage
+.pytest_cache/
+.jest/
+*.test.js.snap
+
+# VR/AR specific
+*.fbx.meta
+*.unity.meta
+Library/
+Temp/
+*.unitypackage
+*.blend1
+*.blend2
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+site/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# OS files
+Thumbs.db
+.DS_Store

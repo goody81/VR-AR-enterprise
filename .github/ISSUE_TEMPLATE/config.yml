@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/goody81/VR-AR-enterprise/wiki
+    about: Check our documentation for answers
+  - name: Community Discussion
+    url: https://github.com/goody81/VR-AR-enterprise/discussions
+    about: Ask questions and discuss with the community
