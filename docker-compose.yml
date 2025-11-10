@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vr-ar-enterprise
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+      - postgres
+    networks:
+      - vr-ar-network
+    volumes:
+      - ./logs:/app/logs
+
+  mongodb:
+    image: mongo:7
+    container_name: vr-ar-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=changeme
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - vr-ar-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: vr-ar-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=vr_ar_enterprise
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - vr-ar-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: vr-ar-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - vr-ar-network
+    volumes:
+      - redis-data:/data
+
+networks:
+  vr-ar-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  postgres-data:
+  redis-data:

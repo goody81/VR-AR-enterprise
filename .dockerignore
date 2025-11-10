@@ -1,0 +1,22 @@
+# Docker ignore file
+node_modules
+npm-debug.log
+.env
+.env.local
+.git
+.gitignore
+.vscode
+.idea
+*.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+coverage
+.jest
+tests
+*.test.js
+*.spec.js
+docs
+.editorconfig
+.eslintrc.js
+.prettierrc
