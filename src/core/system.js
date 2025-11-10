@@ -28,7 +28,7 @@ class CoreSystem {
   }
 
   enableFeature(feature) {
-    if (this.features.hasOwnProperty(feature)) {
+    if (Object.prototype.hasOwnProperty.call(this.features, feature)) {
       this.features[feature] = true;
       return true;
     }
@@ -36,7 +36,7 @@ class CoreSystem {
   }
 
   disableFeature(feature) {
-    if (this.features.hasOwnProperty(feature)) {
+    if (Object.prototype.hasOwnProperty.call(this.features, feature)) {
       this.features[feature] = false;
       return true;
     }
